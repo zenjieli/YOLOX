@@ -215,7 +215,7 @@ events.out.tfevents*
 
 # vscode
 *.code-workspace
-.vscode
+#.vscode
 
 # vim
 .vim
