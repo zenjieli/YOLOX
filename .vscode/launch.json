@@ -11,6 +11,28 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false
+        },
+        {
+            "name": "Train",
+            "type": "python",
+            "request": "launch",
+            "program": "tools/train.py",
+            "console": "integratedTerminal",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "args": [
+                "-f",
+                "exps/example/custom/yolox_s.py",
+                "-b",
+                "16",
+                "--fp16",
+                "--ckpt",
+                "./yolox_s.pth",
+                "-o",
+                "--cache"
+            ],
+            "justMyCode": false
         }
     ]
 }
