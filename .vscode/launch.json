@@ -6,7 +6,7 @@
     "configurations": [
         {
             "name": "Python: Current File",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "${file}",
             "console": "integratedTerminal",
@@ -14,7 +14,7 @@
         },
         {
             "name": "Train",
-            "type": "python",
+            "type": "debugpy",
             "request": "launch",
             "program": "tools/train.py",
             "console": "integratedTerminal",
@@ -31,6 +31,35 @@
                 "./yolox_s.pth",
                 "-o",
                 "--cache"
+            ],
+            "justMyCode": false
+        },
+        {
+            "name": "Infer",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "custom/infer.py",
+            "console": "integratedTerminal",
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"
+            },
+            "args": [
+                "image",
+                "-f",
+                "exps/example/custom/yolox_s.py",
+                "-c",
+                "models/milestone/yolox_s_person.pth",
+                "--path",
+                "~/Pictures/CCTV/AAU_2b164a.jpeg",
+                "--conf",
+                "0.25",
+                "--nms",
+                "0.45",
+                "--tsize",
+                "640",
+                "--save_result",
+                "--device",
+                "gpu"
             ],
             "justMyCode": false
         }
